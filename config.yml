@@ -1,0 +1,37 @@
+version: "1.0"
+logging:
+    log-level: "debug" # "trace" "debug" "info" "warn" "error" "fatal"
+    log-file: "tag_finder.log"
+tag-detection: 
+    device: "fcd"
+    frequency: 150100000
+    update-frequency: 1
+    tag-file: "tags.csv"
+    tag-file-type: "csv" # "sql"
+output: 
+    - type: "csv"
+      file: "detections.csv"
+#    - type: "motus-database"
+#      file: "detections.db"
+    - type: "display-text"
+      device: "lcd-i2c"
+      max-display-time: 30
+      rows: 4
+      columns: 20
+      i2c-address: 0x3f
+#    - type: "display-pixel"
+#      device: "SSD1680"
+#      max-display-time: 30
+#      height: 122
+#      width: 250
+#      background-color: "white"
+#      foreground-color: "black"
+#      font: "DejaVuSans"
+#      fontsize: null
+#      rows: 2
+#      columns: 2
+#      line-width: 2
+#gps:
+#    device: "None"
+#    lat: 53.56455
+#    lon: 8.10845
